@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!--
+ #==============================================================================
+ #
+ # Title                : SEPECAT Jaguar GR1 EFM for DCS world
+ #
+ # File Type            : Configuration File.
+ #
+ # Description          : acEFM Config file for Jaguar GR1; 
+ #                      : repo: https://github.com/Zaretto/DCS-SEPECAT-Jaguar
+ #                      : based on the FlightGear JaguarGR1 
+ #                      : ://github.com/swampmo/Jaguar-GR1
+ #                      :
+ # Authors              : Richard Harrison (richard@zaretto.com)
+ #                      :  Gary Brown (liveries)
+ #                      :  Jonathan Redpath (electrics, hyds)
+ #                      :  Joshua Davidson (FCS, AFCS)
+ #                      :  NC-687 (3d models)
+ #                      :  Nikolai V. Chr. (Canvas instruments)
+ #                      :  Richard Harrison (Aero Model and flight dynamics, 3d, aircraft systems)
+ #                      :  Steve Brown (general)
+ #                      :  StuartC
+ #
+ # Copyright (C) 2022 Authors           Released under GPL V2
+ #
+ #==============================================================================
+ -->
+
+<PropertyList>
+  <fdm>
+    <jsbsim>
+      <systems>
+        <electrical></electrical>
+      </systems>
+            <calculations>
+        <KSA>
+          <n2 type="double">0</n2>
+        </KSA>
+      </calculations>
+      <fcs>
+        <canopy-cmd-norm type="double">1</canopy-cmd-norm>
+        <canopy-emerg-cmd type="bool">false</canopy-emerg-cmd>
+        <canopy-germ-cmd type="bool">false</canopy-germ-cmd>
+      </fcs>
+      <hs>
+        <max-pressure type="double">210.0</max-pressure>
+        <arm150m-pitch-1 type="double">1.0</arm150m-pitch-1>
+        <arm150m-pitch-2 type="double">1.0</arm150m-pitch-2>
+        <arm150m-roll-1 type="double">1.0</arm150m-roll-1>
+        <arm150m-roll-2 type="double">1.0</arm150m-roll-2>
+        <arm150m-yaw-1 type="double">1.0</arm150m-yaw-1>
+        <arm150m-yaw-2 type="double">1.0</arm150m-yaw-2>
+      </hs>
+      <systems>
+        <canopy>
+          <emerg-command type="bool">0</emerg-command>
+          <serviceable type="bool">1</serviceable>
+        </canopy>
+        <gear>
+          <serviceable type="bool">1</serviceable>
+          <vpr type="bool">1</vpr>
+        </gear>
+        <instrumentation>
+          <DA200s-serviceable type="bool">1</DA200s-serviceable>
+          <US-30-3-serviceable type="bool">1</US-30-3-serviceable>
+          <UMS>
+            <Mach type="double">0.0</Mach>
+            <TAS-kmh type="double">0.0</TAS-kmh>
+            <UMS-2.5-serviceable type="bool">1</UMS-2.5-serviceable>
+          </UMS>
+          <US-1600>
+            <US-1600-serviceable type="bool">1</US-1600-serviceable>
+          </US-1600>
+        </instrumentation>
+        <COC>
+          <LERX-cmd type="bool">false</LERX-cmd>
+        </COC>
+        <PS>
+          <OVS_cap type="float">100</OVS_cap>
+          <AVS_cap type="float">100</AVS_cap>
+        </PS>
+        <SVS>
+          <PVD_select type="bool">0</PVD_select>
+          <altitude-m type="double">0.0</altitude-m>
+          <airspeed-kmh type="double">0.0</airspeed-kmh>
+          <true-airspeed-kmh type="double">0.0</true-airspeed-kmh>
+          <vertical-speed-mps type="double">0.0</vertical-speed-mps>
+          <PVDr_alt type="double">0.0</PVDr_alt>
+          <PVDr_as type="double">0.0</PVDr_as>
+          <PVDr_tas type="double">0.0</PVDr_tas>
+          <PVDr_vs type="double">0.0</PVDr_vs>
+          <PVDa_alt type="double">0.0</PVDa_alt>
+          <PVDa_as type="double">0.0</PVDa_as>
+          <PVDa_tas type="double">0.0</PVDa_tas>
+          <PVDa_vs type="double">0.0</PVDa_vs>
+          <PVDr-serviceable type="bool">1</PVDr-serviceable>
+          <PVDa-serviceable type="bool">1</PVDa-serviceable>
+        </SVS>
+        <fuel>
+          <on type="bool">false</on>
+          <serviceable type="bool">true</serviceable>
+          <flow-rate-in-pps type="float">4.754</flow-rate-in-pps>
+          <flow-rate-out-pps type="float">-2.377</flow-rate-out-pps>
+        </fuel>
+        <intake>
+          <pos-left type="double">0.0</pos-left>
+          <pos-right type="double">0.0</pos-right>
+        </intake>
+        <electrical-ok type="bool">false</electrical-ok>
+      </systems>
+    </jsbsim>
+  </fdm>
+  <sim>
+    <description>SEPECAT Jaguar GR1</description>
+    <long-description>
+      The SEPECAT Jaguar is an Anglo-French jet attack aircraft originally used by the British Royal Air Force and the French Air Force
+      in the close air support and nuclear strike role. It is still in service in upgraded form with the Indian Air Force.
+
+      Originally conceived in the 1960s as a jet trainer with a light ground attack capability, the requirement for the aircraft soon changed to include supersonic performance,
+      reconnaissance and tactical nuclear strike roles. A carrier-based variant was also planned for French Navy service, but this was cancelled in favour of the cheaper Dassault Super Étendard. The aircraft were manufactured by SEPECAT (Société Européenne de Production de l'avion Ecole de Combat et d'Appui Tactique), a joint venture between Breguet and the British Aircraft Corporation, one of the first major joint-Anglo-French military aircraft programmes.
+
+      Maximum speed: 730 kt (M1.1) Sea Level,  917 kt (M1.6) at 36,000 ft. Landing speed: 115 kt.
+    </long-description>
+    <author>Sergey Salov</author>
+
+    <flight-model>jsb</flight-model>
+    <aero>SEPECAT-Jaguar-vsp</aero>
+    <aircraft-version>0.1</aircraft-version>
+
+    <status>beta</status>
+
+    <author>Emmanuel Baranger, Steve Brown, Gary Brown, Jonathan Redpath, StuartC, NC-687, Nikolai V. Chr., Joshua Davidson, Richard Harrison, Jüttner Domokos</author>
+ 
+    <current-view>
+      <internal></internal>
+    </current-view>
+    <!-- bind all cockpit params -->
+    <cockpit>
+      <gauge>
+        <param>Airspeed</param>
+        <property>/fdm/jsbsim/velocities/vc-kts</property>
+      </gauge>
+      <gauge>
+        <param>MachIndicator</param>
+        <property>/fdm/jsbsim/velocities/mach</property>
+      </gauge>
+      <gauge>
+        <param>Slipball</param>
+        <property>/fdm/jsbsim/aero/beta-deg</property>
+        <factor>DEGREES_TO_RADIANS</factor>
+      </gauge>
+      <gauge>
+        <param>Variometer</param>
+        <property>/fdm/jsbsim/velocities/vsi-instant-ftmin</property>
+      </gauge>
+      <gauge>
+        <param>AI_Pitch</param>
+        <property>/fdm/jsbsim/attitude/pitch-rad</property>
+      </gauge>
+      <gauge>
+        <param>AI_Bank</param>
+        <property>/fdm/jsbsim/attitude/roll-rad</property>
+      </gauge>
+      <gauge>
+        <param>SAI_Pitch</param>
+        <property>/fdm/jsbsim/attitude/pitch-rad</property>
+      </gauge>
+      <gauge>
+        <param>SAI_Bank</param>
+        <property>/fdm/jsbsim/attitude/roll-rad</property>
+      </gauge>
+      <gauge>
+        <param>HSI_CompassCard</param>
+        <property>/fdm/jsbsim/attitude/psi-rad</property>
+      </gauge>
+      <gauge>
+        <param>Flight_Pressure</param>
+        <property>/fdm/jsbsim/systems/hydraulics/number1-system-pump-psi</property>
+      </gauge>
+      <gauge>
+        <param>Utility_Pressure</param>
+        <property>/fdm/jsbsim/systems/hydraulics/number2-system-pump-psi</property>
+      </gauge>
+      <gauge>
+        <param>AOA_Units</param>
+        <property>/fdm/jsbsim/aero/alpha-deg</property>
+      </gauge>
+      <gauge>
+        <param>Tachometer_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine/n2</property>
+      </gauge>
+      <gauge>
+        <param>Tachometer_percent_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine/n1</property>
+      </gauge>
+      <gauge>
+        <param>EGT_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine/EGT-C</property>
+      </gauge>
+      <gauge>
+        <param>OilPressure_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine[0]/oil-pressure-psi</property>
+      </gauge>
+      <gauge>
+        <param>NozzlePos_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine[0]/alt/nozzle-pos-norm</property>
+      </gauge>
+      <gauge>
+        <param>CabinPressure</param>
+        <property>/fdm/jsbsim/systems/ecs/cabin-altitude-ft</property>
+        <factor>0.001</factor>
+      </gauge>
+      <gauge>
+        <param>FuelFlow_Left</param>
+        <property>/fdm/jsbsim/propulsion/engine/fuel-flow-rate-pps</property>
+        <factor>3600</factor>
+      </gauge>
+      <gauge>
+        <param>FuelQuantity_Left</param>
+        <property>/fdm/jsbsim/propulsion/total-fuel-l-lbs</property>
+      </gauge>
+      <gauge>
+        <param>FuelQuantity_Right</param>
+        <property>/fdm/jsbsim/propulsion/total-fuel-r-lbs</property>
+      </gauge>
+      <gauge>
+        <param>OxygenQuantity</param>
+        <property>/fdm/jsbsim/systems/ecs/oxygen-quantity-liters</property>
+      </gauge>
+      <gauge>
+        <param>Accelerometer</param>
+        <property>accelerations/wdot-ft_sec2</property>
+        <factor>0.03125</factor>
+      </gauge>
+
+      <gauge>
+        <type>GenevaDrive</type>
+        <param>Altimeter_10000_footCount</param>
+        <property>fdm/jsbsim/position/h-sl-ft</property>
+        <factor>10000</factor>
+      </gauge>
+      <gauge>
+        <type>GenevaDrive</type>
+        <param>Altimeter_1000_footCount</param>
+        <property>fdm/jsbsim/position/h-sl-ft</property>
+        <factor>1000</factor>
+      </gauge>
+      <gauge>
+        <type>GenevaDrive</type>
+        <param>Altimeter_100_footCount</param>
+        <property>fdm/jsbsim/position/h-sl-ft</property>
+        <factor>100</factor>
+      </gauge>
+      <gauge>
+        <type>LinearDrive</type>
+        <param>Altimeter_100_footPtr</param>
+        <property>fdm/jsbsim/position/h-sl-ft</property>
+        <factor>100</factor>
+      </gauge>
+    </cockpit>
+  </sim>
+</PropertyList>
