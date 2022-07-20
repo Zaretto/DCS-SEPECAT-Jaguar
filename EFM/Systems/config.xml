@@ -40,6 +40,12 @@
     </controls>
     <fdm>
         <jsbsim>
+            <acefm>
+                <debug>0</debug>
+                <metric_forces>0</metric_forces>
+                <metric_moments>0</metric_moments>
+            </acefm>
+
             <autoflight>
                 <input>
                     <hdg-active>0</hdg-active>
@@ -116,6 +122,33 @@
                     </hinges>
                     <has-power>1</has-power>
                 </canopy>
+                <ecs>
+                    <anti-fog>0</anti-fog>
+                    <!-- ECS bleed air source: 
+                        0 : Engines
+                        2 : Off
+                    -->
+                    <bleed-air-source>0</bleed-air-source>
+                    <cabin-altitude-ft />
+                    <canopy-position-dmd>0</canopy-position-dmd>
+                    <emerg-vent>0</emerg-vent>
+                    <liquid-oxygen-activated>0</liquid-oxygen-activated>
+                    <oxygen-pressure-psi />
+                    <!-- oxygen qty; 0 off, 1 normal, 2 emerg-->
+                    <oxygen-qty-test>0</oxygen-qty-test>
+                    <oxygen-quantity-liters />
+                    <oxygen-supply-mode>0</oxygen-supply-mode>
+                    <pressurisation-active>1</pressurisation-active>
+                    <!--Windscreen Heating-->
+                    <windscreen-factor1>6750</windscreen-factor1>
+                    <windscreen-frost-amount-dmd-rate>0.1</windscreen-frost-amount-dmd-rate>
+                    <windscreen-heater-power-watts />
+                    <windscreen-heater-watts-second>46</windscreen-heater-watts-second>
+                    <!--Watts per second ramp up on heater input consumption-->
+                    <windscreen-temperature-k>290</windscreen-temperature-k>
+                    <windshield-heat>0</windshield-heat>
+                  </ecs>
+            
                 <electrical>
                     <ac-transformer-offline>0</ac-transformer-offline>
                     <alternator-1-failed>0</alternator-1-failed>
