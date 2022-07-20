@@ -6157,6 +6157,7 @@ Other:
             </function>
         </axis>
     </aerodynamics>
+    <input port="1137"/>
     <output name="c:/temp/JSBOut.csv" type="CSV" rate="10">
         <property caption="alpha-deg">aero/alpha-deg</property>
         <property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
