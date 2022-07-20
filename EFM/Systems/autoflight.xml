@@ -8,10 +8,10 @@
         <switch name="position/wow">
             <default value="0" />
             <test logic="OR" value="1">
-        gear/unit[0]/WOW eq 1
-        gear/unit[1]/WOW eq 1
-        gear/unit[2]/WOW eq 1
-      </test>
+                gear/unit[0]/WOW eq 1
+                gear/unit[1]/WOW eq 1
+                gear/unit[2]/WOW eq 1
+            </test>
         </switch>
         <switch name="autoflight/can-engage">
             <default value="1" />
@@ -25,10 +25,10 @@
                 <table>
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <tableData>
-            250  0.20
-            450  0.07
-            950  0.02
-          </tableData>
+                        250  0.20
+                        450  0.07
+                        950  0.02
+                    </tableData>
                 </table>
             </function>
         </fcs_function>
@@ -113,15 +113,15 @@
         <switch name="autoflight/ss/roll-force">
             <default value="0" />
             <test logic="OR" value="1">
-        autoflight/ss/roll-input gt /autopilot/settings/aileron-deadzone
-        autoflight/ss/roll-input lt /autopilot/settings/aileron-deadzone-neg
-      </test>
+                autoflight/ss/roll-input gt /autopilot/settings/aileron-deadzone
+                autoflight/ss/roll-input lt /autopilot/settings/aileron-deadzone-neg
+            </test>
         </switch>
         <switch name="autoflight/ss/roll-reset-time">
             <default value="/fdm/jsbsim/simulation/sim-time-sec" />
             <test value="autoflight/ss/roll-reset-time">
-        autoflight/ss/roll-force eq 0
-      </test>
+                autoflight/ss/roll-force eq 0
+            </test>
         </switch>
         <summer name="autoflight/ss/roll-reset-time-delay">
             <input>autoflight/ss/roll-reset-time</input>
@@ -130,21 +130,21 @@
         <switch name="autoflight/ss/roll-active">
             <default value="0" />
             <test value="1">
-        /fdm/jsbsim/simulation/sim-time-sec lt autoflight/ss/roll-reset-time-delay
-      </test>
+                /fdm/jsbsim/simulation/sim-time-sec lt autoflight/ss/roll-reset-time-delay
+            </test>
         </switch>
         <switch name="autoflight/ss/pitch-force">
             <default value="0" />
             <test logic="OR" value="1">
-        autoflight/ss/pitch-input gt /autopilot/settings/elevator-deadzone
-        autoflight/ss/pitch-input lt /autopilot/settings/elevator-deadzone-neg
-      </test>
+                autoflight/ss/pitch-input gt /autopilot/settings/elevator-deadzone
+                autoflight/ss/pitch-input lt /autopilot/settings/elevator-deadzone-neg
+            </test>
         </switch>
         <switch name="autoflight/ss/pitch-reset-time">
             <default value="/fdm/jsbsim/simulation/sim-time-sec" />
             <test value="autoflight/ss/pitch-reset-time">
-        autoflight/ss/pitch-force eq 0
-      </test>
+                autoflight/ss/pitch-force eq 0
+            </test>
         </switch>
         <summer name="autoflight/ss/pitch-reset-time-delay">
             <input>autoflight/ss/pitch-reset-time</input>
@@ -153,24 +153,24 @@
         <switch name="autoflight/ss/pitch-active">
             <default value="0" />
             <test value="1">
-        /fdm/jsbsim/simulation/sim-time-sec lt autoflight/ss/pitch-reset-time-delay
-      </test>
+                /fdm/jsbsim/simulation/sim-time-sec lt autoflight/ss/pitch-reset-time-delay
+            </test>
         </switch>
         <switch name="autoflight/output/roll-master">
             <default value="0" />
             <test logic="AND" value="1">
-        autoflight/input/roll-switch eq 1
-        autoflight/can-engage eq 1
-        autoflight/ss/roll-force eq 0
-      </test>
+                autoflight/input/roll-switch eq 1
+                autoflight/can-engage eq 1
+                autoflight/ss/roll-force eq 0
+            </test>
         </switch>
         <switch name="autoflight/output/pitch-master">
             <default value="0" />
             <test logic="AND" value="1">
-        autoflight/input/pitch-switch eq 1
-        autoflight/can-engage eq 1
-        autoflight/ss/pitch-force eq 0
-      </test>
+                autoflight/input/pitch-switch eq 1
+                autoflight/can-engage eq 1
+                autoflight/ss/pitch-force eq 0
+            </test>
         </switch>
     </channel>
     <channel name="Autoflight: Drivers">
@@ -178,9 +178,9 @@
         <switch name="autoflight/roll/gain-switch">
             <default value="1" />
             <test logic="AND" value="0">
-        autoflight/output/roll-master eq 1
-        autoflight/input/hdg-active eq 1
-      </test>
+                autoflight/output/roll-master eq 1
+                autoflight/input/hdg-active eq 1
+            </test>
         </switch>
         <fcs_function name="autoflight/roll/heading/bank-max">
             <function>
@@ -188,11 +188,11 @@
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <independentVar lookup="column">inertia/weight-lbs</independentVar>
                     <tableData>
-                  0 38000 45000 55000 70000
-              0   0     0     0     0     0
-            150  10    10     5     5     5
-            210  30    30    20    15    15
-            600  60    60    50    50    50 
+                                   0    38000    45000    55000    70000
+                          0        0        0        0        0        0
+                        150       10       10        5        5        5
+                        210       30       30       20       15       15
+                        600       60       60       50       50       50
           </tableData>
                 </table>
             </function>
@@ -220,12 +220,12 @@
         <switch name="autoflight/roll/heading/trigger">
             <default value="0" />
             <test value="-1">
-        autoflight/roll/gain-switch eq 1
-      </test>
+                autoflight/roll/gain-switch eq 1
+            </test>
             <test logic="OR" value="1">
-        autoflight/roll/heading/pi le autoflight/roll/heading/bank-trigger-min
-        autoflight/roll/heading/pi ge autoflight/roll/heading/bank-trigger-max
-      </test>
+                autoflight/roll/heading/pi le autoflight/roll/heading/bank-trigger-min
+                autoflight/roll/heading/pi ge autoflight/roll/heading/bank-trigger-max
+            </test>
         </switch>
         <pid name="autoflight/roll/heading/pi-v">
             <input>autoflight/roll/heading-error-deg</input>
@@ -254,8 +254,8 @@
                 <table>
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <tableData>
-                        200 -7
-                        600 -5
+                        200    -7
+                        600    -5
                     </tableData>
                 </table>
             </function>
@@ -266,10 +266,10 @@
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <independentVar lookup="column">inertia/weight-lbs</independentVar>
                     <tableData>
-                 0    38000 45000 55000 70000
-            300  2000  2000  1500  1000  1000
-            600  6000  6000  3000  3000  2000
-          </tableData>
+                                   0    38000    45000    55000    70000
+                        300     2000     2000     1500     1000     1000
+                        600     6000     6000     3000     3000     2000
+                    </tableData>
                 </table>
             </function>
         </fcs_function>
@@ -326,9 +326,9 @@
         <switch name="autoflight/roll/target-roll-deg">
             <default value="/orientation/roll-deg" />
             <test logic="AND" value="autoflight/roll/heading/pi">
-        autoflight/output/roll-master eq 1
-        autoflight/input/hdg-active eq 1
-      </test>
+                autoflight/output/roll-master eq 1
+                autoflight/input/hdg-active eq 1
+            </test>
         </switch>
         <fcs_function name="autoflight/roll/roll-cmd-target">
             <function>
@@ -354,13 +354,13 @@
         <switch name="autoflight/roll/roll-rad-input">
             <default value="attitude/roll-rad" />
             <test logic="AND" value="autoflight/roll/roll-hld-target">
-        autoflight/output/roll-master eq 1
-        autoflight/input/hdg-active ne 1
-      </test>
+                autoflight/output/roll-master eq 1
+                autoflight/input/hdg-active ne 1
+            </test>
             <test logic="AND" value="autoflight/roll/roll-cmd-target">
-        autoflight/output/roll-master eq 1
-        autoflight/input/hdg-active eq 1
-      </test>
+                autoflight/output/roll-master eq 1
+                autoflight/input/hdg-active eq 1
+            </test>
         </switch>
         <summer name="autoflight/roll/roll-rad-error">
             <input>attitude/roll-rad</input>
@@ -382,12 +382,12 @@
         <switch name="autoflight/roll/trigger">
             <default value="0" />
             <test value="-1">
-        autoflight/output/roll-master ne 1
-      </test>
+                autoflight/output/roll-master ne 1
+            </test>
             <test logic="OR" value="1">
-        autoflight/roll/master-pid le -0.999
-        autoflight/roll/master-pid ge 0.999
-      </test>
+                autoflight/roll/master-pid le -0.999
+                autoflight/roll/master-pid ge 0.999
+            </test>
         </switch>
         <pid name="autoflight/roll/master-pid-v">
             <input>autoflight/roll/roll-rate-error</input>
@@ -404,8 +404,8 @@
         <switch name="autoflight/roll/roll-rate-demand">
             <default value="0" />
             <test logic="AND" value="autoflight/roll/master-pid">
-        autoflight/output/roll-master eq 1
-      </test>
+                autoflight/output/roll-master eq 1
+            </test>
         </switch>
     </channel>
     <channel name="Autoflight: Pitch Channel">
@@ -424,9 +424,9 @@
                 <table>
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <tableData>
-            300 -10
-            600  -6
-          </tableData>
+                        300   -10
+                        600    -6
+                    </tableData>
                 </table>
             </function>
         </fcs_function>
@@ -436,11 +436,11 @@
                     <independentVar lookup="row">velocities/vc-kts</independentVar>
                     <independentVar lookup="column">inertia/weight-lbs</independentVar>
                     <tableData>
-                                0 38000 45000 55000 70000
-                          0     5     5     5    5      5
-                        150    10    10     5    5      5
-                        300    10    10     7    7      7
-                        600    13    13     9    9      9
+                                   0    38000    45000    55000    70000
+                          0        5        5        5        5        5
+                        150       10       10        5        5        5
+                        300       10       10        7        7        7
+                        600       13       13        9        9        9
                     </tableData>
                 </table>
             </function>
@@ -501,9 +501,9 @@
         <switch name="autoflight/pitch/target-pitch-deg">
             <default value="/orientation/pitch-deg" />
             <test logic="AND" value="autoflight/pitch/vs/pid">
-        autoflight/output/pitch-master eq 1
-        autoflight/input/vs-active eq 1
-      </test>
+                autoflight/output/pitch-master eq 1
+                autoflight/input/vs-active eq 1
+            </test>
         </switch>
         <fcs_function name="autoflight/pitch/pitch-cmd-target">
             <function>
@@ -529,13 +529,13 @@
         <switch name="autoflight/pitch/pitch-rad-input">
             <default value="attitude/pitch-rad" />
             <test logic="AND" value="autoflight/pitch/pitch-hld-target">
-        autoflight/output/pitch-master eq 1
-        autoflight/input/vs-active ne 1
-      </test>
+                autoflight/output/pitch-master eq 1
+                autoflight/input/vs-active ne 1
+            </test>
             <test logic="AND" value="autoflight/pitch/pitch-cmd-target">
-        autoflight/output/pitch-master eq 1
-        autoflight/input/vs-active eq 1
-      </test>
+                autoflight/output/pitch-master eq 1
+                autoflight/input/vs-active eq 1
+            </test>
         </switch>
         <summer name="autoflight/pitch/pitch-rad-error">
             <input>attitude/pitch-rad</input>
@@ -561,11 +561,11 @@
           <independentVar lookup="row">velocities/vc-kts</independentVar>
           <independentVar lookup="column">autoflight/output/pitch-master</independentVar>
           <tableData>
-                 0  1  
-            200  0  17
-            320  0  10
-            600  0  6
-            950  0  2
+                     0    1
+              200    0   17
+              320    0   10
+              600    0    6
+              950    0    2
           </tableData>
         </table>
       </function>
@@ -577,11 +577,11 @@
           <independentVar lookup="row">velocities/vc-kts</independentVar>
           <independentVar lookup="column">autoflight/output/pitch-master</independentVar>
           <tableData>
-                 0  1  
-            200  0  31
-            320  0  22
-            600  0  16
-            950  0  6
+                     0    1
+              200    0   31
+              320    0   22
+              600    0   16
+              950    0    6
           </tableData>
         </table>
       </function>
@@ -593,11 +593,11 @@
           <independentVar lookup="row">velocities/vc-kts</independentVar>
           <independentVar lookup="column">autoflight/output/pitch-master</independentVar>
           <tableData>
-                 0     1  
-            200  0.00  0.90
-            320  0.00  0.50
-            600  0.00  0.15
-            950  0.00  0.05
+                      0     1
+              200  0.00  0.90
+              320  0.00  0.50
+              600  0.00  0.15
+              950  0.00  0.05
           </tableData>
         </table>
       </function>
@@ -606,12 +606,12 @@
         <switch name="autoflight/pitch/trigger">
             <default value="0" />
             <test value="-1">
-        autoflight/output/pitch-master ne 1
-      </test>
+                autoflight/output/pitch-master ne 1
+            </test>
             <test logic="OR" value="1">
-        autoflight/pitch/master-pid le -0.999
-        autoflight/pitch/master-pid ge 0.999
-      </test>
+                autoflight/pitch/master-pid le -0.999
+                autoflight/pitch/master-pid ge 0.999
+            </test>
         </switch>
         <pid name="autoflight/pitch/master-pid-v">
             <input>autoflight/pitch/pitch-rate-error</input>
@@ -632,15 +632,15 @@
         <switch name="autoflight/pitch/master-pid-switched">
             <default value="autoflight/pitch/master-pid" />
             <test logic="OR" value="autoflight/pitch/master-pid-inv">
-        attitude/roll-rad lt -1.5708
-        attitude/roll-rad gt 1.5708
-      </test>
+                attitude/roll-rad lt -1.5708
+                attitude/roll-rad gt 1.5708
+            </test>
         </switch>
         <switch name="autoflight/pitch/pitch-rate-demand">
             <default value="0" />
             <test logic="AND" value="autoflight/pitch/master-pid-switched">
-        autoflight/output/pitch-master eq 1
-      </test>
+                autoflight/output/pitch-master eq 1
+            </test>
         </switch>
     </channel>
     <channel name="Control Ties">
@@ -673,25 +673,25 @@
                         <independentVar lookup="row">fcs/stick-pitch</independentVar>
                         <independentVar lookup="column">velocities/vc-kts</independentVar>
                         <tableData>
-                    0   	300
-            -1.000	-1.0000	-1.0000
-            -0.188	-0.0673	-0.0673
-            -0.001	 0.0000	 0.0000
-             0.003	 0.0000	 0.0000
-             0.351	 0.1964	 0.1964
-             1.000	 1.0000	 1.0000
-          </tableData>
+                                          0       300
+                           -1.000   -1.0000   -1.0000
+                           -0.188   -0.0673   -0.0673
+                           -0.001    0.0000    0.0000
+                            0.003    0.0000    0.0000
+                            0.351    0.1964    0.1964
+                            1.000    1.0000    1.0000
+                        </tableData>
                     </table>
                     <!-- AJAX gearing -->
                     <table>
                         <independentVar lookup="row">velocities/vc-kts</independentVar>
                         <tableData>
-              200	1.00000
-              300	0.98392
-              400	0.68021
-              500	0.44357
-              600	0.45406
-            </tableData>
+                            200  1.00000
+                            300  0.98392
+                            400  0.68021
+                            500  0.44357
+                            600  0.45406
+                        </tableData>
                     </table>
                 </product>
             </function>
@@ -699,9 +699,9 @@
         <switch name="fcs/css-pitch">
             <default value="0" />
             <test logic="AND" value="autoflight/ss/elevator-norm">
-        autoflight/input/pitch-switch eq 1
-        autoflight/ss/elevator-norm ne 0
-      </test>
+                autoflight/input/pitch-switch eq 1
+                autoflight/ss/elevator-norm ne 0
+            </test>
         </switch>
         <summer name="fcs/ap-pitch-cmd-norm">
             <input>fcs/stick-pitch-scheduled</input>
@@ -712,15 +712,15 @@
         <switch name="fcs/stick-roll">
             <default value="0" />
             <test value="sas/roll-cmd-output">
-        autoflight/input/roll-switch ne 1
-      </test>
+                autoflight/input/roll-switch ne 1
+            </test>
         </switch>
         <switch name="fcs/css-roll">
             <default value="0" />
             <test logic="AND" value="autoflight/ss/aileron-norm">
-        autoflight/input/roll-switch eq 1
-        autoflight/ss/aileron-norm ne 0
-      </test>
+                autoflight/input/roll-switch eq 1
+                autoflight/ss/aileron-norm ne 0
+            </test>
         </switch>
         <summer name="fcs/ap-roll-cmd-norm">
             <input>fcs/stick-roll</input>

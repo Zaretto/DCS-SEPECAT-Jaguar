@@ -12,8 +12,8 @@
         <switch name="systems/refuel/probe-armed">
             <default value="0" />
             <test logic="AND" value="1">
-          systems/refuel/probe-pos-norm gt 0.1
-          </test>
+                systems/refuel/probe-pos-norm gt 0.1
+            </test>
         </switch>
 
         <!-- simulation of various things that aren't specifically related to the flight controls but belong here
@@ -135,14 +135,14 @@
             <table>
                 <independentVar lookup="row">velocities/vc-kts</independentVar>
                 <tableData>
-                0	1.0000
-              200	1.0000
-              250	0.8366
-              300	0.6682
-              336	0.4956
-              370	0.3343
-              400	0.1664
-              423	0.0000
+                      0    1.0000
+                    200    1.0000
+                    250    0.8366
+                    300    0.6682
+                    336    0.4956
+                    370    0.3343
+                    400    0.1664
+                    423    0.0000
             </tableData>
             </table>
             <output>fcs/differential-elevator-pos-norm-0</output>
@@ -199,13 +199,13 @@
                 <table>
                     <independentVar lookup="row">fcs/ap-roll-cmd-norm</independentVar>
                     <tableData>
-          -1.0000		-1.0000
-          -0.5026		-0.3951
-          -0.3006		-0.1419
-           0.0000		 0.0000
-           0.3006		 0.1419
-           0.5026		 0.3951
-           1.0000		 1.0000
+                       -1.0000   -1.0000
+                       -0.5026   -0.3951
+                       -0.3006   -0.1419
+                        0.0000    0.0000
+                        0.3006    0.1419
+                        0.5026    0.3951
+                        1.0000    1.0000
         </tableData>
                 </table>
             </function>
@@ -223,25 +223,25 @@
                 <table>
                     <independentVar lookup="row">fcs/spoiler-command-norm</independentVar>
                     <tableData>
-          -1.00 	-44.95
-          -0.83 	-40.61
-          -0.67 	-34.64
-          -0.54 	-29.61
-          -0.45 	-24.68
-          -0.34 	-19.59
-          -0.24 	-14.50
-          -0.15 	-9.40
-          -0.07 	-4.31
-           0.00 	 0.00
-           0.07 	 4.31
-           0.15 	 9.40
-           0.24 	 14.50
-           0.34 	 19.59
-           0.45 	 24.68
-           0.54 	 29.61
-           0.67 	 34.64
-           0.83 	 40.61
-           1.00 	 44.95
+                       -1.00 -44.95
+                       -0.83 -40.61
+                       -0.67 -34.64
+                       -0.54 -29.61
+                       -0.45 -24.68
+                       -0.34 -19.59
+                       -0.24 -14.50
+                       -0.15  -9.40
+                       -0.07  -4.31
+                        0.00   0.00
+                        0.07   4.31
+                        0.15   9.40
+                        0.24  14.50
+                        0.34  19.59
+                        0.45  24.68
+                        0.54  29.61
+                        0.67  34.64
+                        0.83  40.61
+                        1.00  44.95
       </tableData>
                 </table>
             </function>
@@ -319,7 +319,7 @@
             <test logic="AND" value="0">
                 <!-- auto -->
                 controls/fcs/rudder-gearing-master-switch-85c eq 0
-      gear/gear-pos-norm gt 0.4
+                gear/gear-pos-norm gt 0.4
             </test>
         </switch>
 
@@ -383,7 +383,7 @@
         <switch name="fcs/flap-cmd">
             <default value="0" />
             <test value="/controls/flight/flaps">
-                 fcs/slats-deg gt 22.999              
+                fcs/slats-deg gt 22.999
             </test>
         </switch>
 
@@ -432,11 +432,11 @@
         <switch name="fcs/slat-cmd">
             <default value="/controls/flight/slats" />
             <test value="1">
-          fcs/flap-pos-deg ge 0.001              
-      </test>
+                fcs/flap-pos-deg ge 0.001
+            </test>
             <test value="sas/autoslat-deg">
-        sas/autoslat-active ne 0
-      </test>
+                sas/autoslat-active ne 0
+            </test>
         </switch>
 
         <kinematic name="Slats Control">
@@ -471,9 +471,9 @@
         <switch name="fcs/gear-no-wow">
             <default value="1" />
             <test logic="AND" value="0">
-         gear/unit[1]/WOW eq 1
-         gear/unit[2]/WOW eq 1
-     </test>
+                gear/unit[1]/WOW eq 1
+                gear/unit[2]/WOW eq 1
+            </test>
         </switch>
 
         <kinematic name="Landing Gear Control">
@@ -527,13 +527,12 @@
             <table>
                 <independentVar>fcs/throttle-cmd-norm[0]</independentVar>
                 <tableData>
-                    0.0000  0.0
-          0.7894  0.99999
                     <!-- (80-5)/95 -->
-                    0.8421  0.99999
-                    <!-- (85-5)/95 -->
-                    0.84211 1.00000
-          1.0000  2.0
+                   0.00000  0.00000
+                   0.78940  0.99999
+                   0.84210  0.99999
+                   0.84211  1.00000
+                   1.00000  2.00000
                 </tableData>
             </table>
             <output>fcs/throttle-pos-norm[0]</output>
@@ -545,11 +544,11 @@
             <table>
                 <independentVar>fcs/throttle-cmd-norm[1]</independentVar>
                 <tableData>
-          0.0000  0.0
-          0.7894  0.99999
-          0.8421  0.99999
-          0.84211 1.00000
-          1.0000  2.0
+                   0.00000  0.00000
+                   0.78940  0.99999
+                   0.84210  0.99999
+                   0.84211  1.00000
+                   1.00000  2.00000
         </tableData>
             </table>
             <output>fcs/throttle-pos-norm[1]</output>
@@ -561,8 +560,8 @@
         <switch name="fcs/nws-active">
             <default value="0" />
             <test logic="AND" value="1">
-      /controls/gear/nose-wheel-steering ne 0
-    </test>
+                /controls/gear/nose-wheel-steering ne 0
+            </test>
         </switch>
         <scheduled_gain name="fcs/scheduled-steer-pos-deg-0">
             <input>fcs/steer-cmd-norm</input>
@@ -570,10 +569,10 @@
                 <independentVar lookup="row">gear/unit[0]/wheel-speed-fps</independentVar>
                 <independentVar lookup="column">fcs/nws-active</independentVar>
                 <tableData>
-                0   1
-            0   0   55
-            80  0   4
-            135 0   0
+                           0    1
+                      0    0   55
+                     80    0    4
+                    135    0    0
         </tableData>
             </table>
             <output>fcs/steer-pos-deg-0</output>

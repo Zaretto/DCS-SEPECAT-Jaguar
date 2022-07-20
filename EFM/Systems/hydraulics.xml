@@ -11,11 +11,11 @@
                 <independentVar lookup="row">propulsion/engine[0]/n2</independentVar>
                 <independentVar lookup="column">systems/hydraulics/number1-system-pump-failed</independentVar>
                 <tableData>
-                    0       1
-                    0       0       0
-                    12      0       0
-                    15      35      0
-                    18   	205     0
+                          0    1
+                     0    0    0
+                    12    0    0
+                    15   35    0
+                    18  205    0
                 </tableData>
             </table>
             <clipto>
@@ -29,11 +29,11 @@
                 <independentVar lookup="row">propulsion/engine[1]/n2</independentVar>
                 <independentVar lookup="column">systems/hydraulics/number2-system-pump-failed</independentVar>
                 <tableData>
-                    0       1
-                    0       0       0
-                    12      0       0
-                    15      35      0
-                    18   	206     0
+                          0    1
+                     0    0    0
+                    12    0    0
+                    15   35    0
+                    18  206    0
                 </tableData>
             </table>
             <clipto>
@@ -47,9 +47,9 @@
                 <independentVar lookup="row">systems/electrical/bus/dc-busbar-emerg</independentVar>
                 <independentVar lookup="column">systems/hydraulics/electric-pump-running</independentVar>
                 <tableData>
-                    0      1
-                    0       0       0
-                    28   	0     	145
+                            0      1
+                     0      0      0
+                    28      0    145
                 </tableData>
             </table>
             <clipto>
@@ -60,12 +60,12 @@
         <switch name="systems/hydraulics/electric-pump-start-request">
             <default value="0" />
             <test logic="AND" value="1">
-               controls/hydraulics/electric-pump-switch eq 1
+                controls/hydraulics/electric-pump-switch eq 1
             </test>
             <test logic="AND" value="1">
-               controls/hydraulics/electric-pump-switch eq 0
-               systems/hydraulics/pressure-1-valve eq 1
-               systems/hydraulics/pressure-2-valve eq 1
+                controls/hydraulics/electric-pump-switch eq 0
+                systems/hydraulics/pressure-1-valve eq 1
+                systems/hydraulics/pressure-2-valve eq 1
             </test>
         </switch>
         <switch name="systems/hydraulics/number1-system-pressure">
