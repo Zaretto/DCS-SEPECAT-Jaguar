@@ -39,6 +39,51 @@
             <!-- used for auto MP transmit and animation -->
         </pure_gain>
     </channel>
+
+
+    <channel name="adc">
+        <lag_filter name="systems/adc/instrumented-g">
+            <input>accelerations/Nz</input>
+            <output>systems/adc/instrumented-g</output>
+            <c1>0.99</c1>
+        </lag_filter>
+        <pure_gain name="propulsion/engine[0]/fuel-flow-rate-kgmin">
+            <description>Landing gear unit 0 position</description>
+            <input>propulsion/engine[0]/fuel-flow-rate-pps</input>
+            <gain>27.2155</gain>
+        </pure_gain>
+        <pure_gain name="propulsion/engine[1]/fuel-flow-rate-kgmin">
+            <description>Landing gear unit 0 position</description>
+            <input>propulsion/engine[1]/fuel-flow-rate-pps</input>
+            <gain>27.2155</gain>
+        </pure_gain>
+    </channel>
+
+    <channel name="fuel">
+        <summer name="propulsion/total-fuel-l-lbs">
+            <input>propulsion/tank[0]/contents-lbs</input>
+            <input>propulsion/tank[3]/contents-lbs</input>
+            <output>propulsion/total-fuel-l-lbs</output>
+        </summer>
+        <summer name="propulsion/total-fuel-r-lbs">
+            <input>propulsion/tank[1]/contents-lbs</input>
+            <input>propulsion/tank[4]/contents-lbs</input>
+            <output>propulsion/total-fuel-r-lbs</output>
+        </summer>
+        <pure_gain name="propulsion/total-fuel-l-kg">
+            <input>propulsion/total-fuel-l-lbs</input>
+            <gain>0.4545454545454545</gain>
+        </pure_gain>
+        <pure_gain name="propulsion/total-fuel-r-kg">
+            <input>propulsion/total-fuel-r-lbs</input>
+            <gain>0.4545454545454545</gain>
+        </pure_gain>
+        <pure_gain name="propulsion/total-fuel-kg">
+            <input>propulsion/total-fuel-lbs</input>
+            <gain>0.4545454545454545</gain>
+        </pure_gain>
+    </channel>
+
     <channel name='instruments'>
         <pure_gain name="instrumentation/altimeter/indicated-altitude-ft">
             <input>position/h-sl-ft</input>
