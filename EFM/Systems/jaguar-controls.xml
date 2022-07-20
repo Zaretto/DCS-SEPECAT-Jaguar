@@ -8,17 +8,17 @@
 
         <!-- canopy get stuck if it fail -->
         <switch name="names/canopy/tmp-engage">
-            <default value="fcs/canopy/engage"/>
-            <test logic="OR" value="fcs/canopy/pos-norm">
-                fcs/canopy/serviceable == 0
-                fcs/canopy/hinges/serviceable == 0
-                fcs/canopy/has-power == 0
+            <default value="controls/canopy/open-dmd" />
+            <test logic="OR" value="systems/canopy/pos-norm">
+                systems/canopy/serviceable == 0
+                systems/canopy/hinges/serviceable == 0
+                systems/canopy/has-power == 0
             </test>
-            <output>fcs/canopy/engageTmp</output>
+            <output>controls/canopy/open-dmdTmp</output>
         </switch>
 
         <kinematic name="names/canopy/pos-norm">
-            <input>fcs/canopy/engageTmp</input>
+            <input>controls/canopy/open-dmdTmp</input>
             <traverse>
                 <setting>
                     <position>0.0</position>
@@ -29,15 +29,46 @@
                     <time>5.0</time>
                 </setting>
             </traverse>
-            <output>fcs/canopy/pos-norm</output>
+            <output>systems/canopy/pos-norm</output>
         </kinematic>
 
         <pure_gain name="names/canopy/mp">
-            <input>fcs/canopy/pos-norm</input>
+            <input>systems/canopy/pos-norm</input>
             <gain>1</gain>
             <output>/canopy/position-norm</output>
             <!-- used for auto MP transmit and animation -->
         </pure_gain>
     </channel>
-
+    <channel name='instruments'>
+        <pure_gain name="instrumentation/altimeter/indicated-altitude-ft">
+            <input>position/h-sl-ft</input>
+            <gain>1</gain>
+            <output>/instrumentation/altimeter/indicated-altitude-ft</output>
+        </pure_gain>
+        <pure_gain name="instrumentation/vsi/indicated-vertical-speed-fpm">
+            <input>position/h-sl-ft</input>
+            <gain>1</gain>
+            <output>/instrumentation/vsi/indicated-vertical-speed-fpm</output>
+        </pure_gain>
+        <pure_gain name="instrumentation/hsi/heading-magnetic-deg">
+            <input>attitude/psi-deg</input>
+            <gain>1</gain>
+            <output>/orientation/heading-magnetic-deg</output>
+        </pure_gain>
+        <pure_gain name="instrumentation/hsi/heading-deg">
+            <input>attitude/psi-deg</input>
+            <gain>1</gain>
+            <output>/orientation/heading-deg</output>
+        </pure_gain>
+        <pure_gain name="instrumentation/hsi/pitch-deg">
+            <input>attitude/theta-deg</input>
+            <gain>1</gain>
+            <output>/orientation/pitch-deg</output>
+        </pure_gain>
+        <pure_gain name="instrumentation/hsi/roll-deg">
+            <input>attitude/phi-deg</input>
+            <gain>1</gain>
+            <output>/orientation/roll-deg</output>
+        </pure_gain>
+    </channel>
 </system>
