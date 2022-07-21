@@ -69,7 +69,7 @@
       </gauge>
       <gauge>
         <param>Variometer</param>
-        <property>/fdm/jsbsim/velocities/vsi-instant-ftmin</property>
+        <property>/fdm/jsbsim/instrumentation/vsi/indicated-vertical-speed-fpm</property>
       </gauge>
       <gauge>
         <param>AI_Pitch</param>
@@ -93,11 +93,11 @@
       </gauge>
       <gauge>
         <param>Flight_Pressure</param>
-        <property>/fdm/jsbsim/systems/hydraulics/number1-system-pump-psi</property>
+        <property>/fdm/jsbsim/systems/hydraulics/number1-system-pressure</property>
       </gauge>
       <gauge>
         <param>Utility_Pressure</param>
-        <property>/fdm/jsbsim/systems/hydraulics/number2-system-pump-psi</property>
+        <property>/fdm/jsbsim/systems/hydraulics/number2-system-pressure</property>
       </gauge>
       <gauge>
         <param>AOA_Units</param>
@@ -147,7 +147,7 @@
       </gauge>
       <gauge>
         <param>Accelerometer</param>
-        <property>accelerations/wdot-ft_sec2</property>
+        <property>/fdm/jsbsim/systems/adc/instrumented-g</property>
         <factor>0.03125</factor>
       </gauge>
 
