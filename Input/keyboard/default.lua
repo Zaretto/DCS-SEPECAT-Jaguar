@@ -4,7 +4,7 @@ join(res.keyCommands,{
 -- Autopilot
 {combos = {{key = 'A'}}, down = iCommandPlaneAutopilot, name = 'Autopilot', category = 'Autopilot'},
 {combos = {{key = 'H'}}, down = iCommandPlaneSAUHBarometric, name = 'Autopilot - Barometric Altitude Hold \'H\'', category = 'Autopilot'},
-{combos = {{key = '`', reformers = {'LAlt'}}}, down = iCommandPlaneAutopilotOverrideOn, up = iCommandPlaneAutopilotOverrideOff, name = 'Autopilot override (Su-25T)', category = 'Autopilot'},
+{combos = {{key = '`', reformers = {'LAlt'}}}, down = iCommandPlaneAutopilotOverrideOn, up = iCommandPlaneAutopilotOverrideOff, name = 'Autopilot override (F-104G)', category = 'Autopilot'},
 {combos = {{key = '1', reformers = {'LAlt'}}}, down = iCommandPlaneStabTangBank, name = 'Autopilot - Attitude Hold', category = 'Autopilot'},
 {combos = {{key = '2', reformers = {'LAlt'}}}, down = iCommandPlaneStabHbarBank, name = 'Autopilot - Altitude And Roll Hold', category = 'Autopilot'},
 {combos = {{key = '3', reformers = {'LAlt'}}}, down = iCommandPlaneStabHorizon,	name = 'Autopilot - Transition To Level Flight Control', category = 'Autopilot'},
@@ -18,8 +18,8 @@ join(res.keyCommands,{
 --{combos = {{key = 'R', reformers = {'LCtrl'}}}, down = iCommandPlaneAirRefuel, name = 'Refueling Boom', category = 'Systems'},
 {combos = {{key = 'R', reformers = {'LAlt'}}}, down = iCommandPlaneJettisonFuelTanks, name = 'Jettison Fuel Tanks', category = 'Systems'},
 {combos = {{key = 'L', reformers = {'RShift'}}}, down = iCommandPowerOnOff, name = 'Electric Power Switch', category = 'Systems'},
-{combos = {{key = '=', reformers = {'RShift'}}}, pressed = iCommandAltimeterPressureIncrease,	up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Increase Su-25T', category = 'Systems'},
-{combos = {{key = '-', reformers = {'RShift'}}}, pressed = iCommandAltimeterPressureDecrease, up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Decrease Su-25T', category = 'Systems'},
+{combos = {{key = '=', reformers = {'RShift'}}}, pressed = iCommandAltimeterPressureIncrease,	up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Increase F-104G', category = 'Systems'},
+{combos = {{key = '-', reformers = {'RShift'}}}, pressed = iCommandAltimeterPressureDecrease, up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Decrease F-104G', category = 'Systems'},
 
 -- Modes
 --{combos = {{key = '2'}}, down = iCommandPlaneModeBVR, name = '(2) Beyond Visual Range Mode', category = 'Modes'},
@@ -58,7 +58,7 @@ join(res.keyCommands,{
 {combos = {{key = ',', reformers = {'RAlt'}}}, down = iCommandPlaneThreatWarnSoundVolumeDown, name = 'RWR/SPO Sound Signals Volume Down', category = 'Sensors'},
 {combos = {{key = '.', reformers = {'RAlt'}}}, down = iCommandPlaneThreatWarnSoundVolumeUp, name = 'RWR/SPO Sound Signals Volume Up', category = 'Sensors'},
 
--- Weapons                                                                        
+-- Weapons
 {combos = {{key = 'V', reformers = {'LCtrl'}}}, down = iCommandPlaneSalvoOnOff, name = 'Salvo Mode', category = 'Weapons'},
 --{combos = {{key = 'Space', reformers = {'RAlt'}}}, down = iCommandPlanePickleOn,	up = iCommandPlanePickleOff, name = 'Weapon Release', category = 'Weapons'},
 {combos = {{key = 'C', reformers = {'LShift'}}}, down = iCommandChangeGunRateOfFire, name = 'Cut Of Burst select', category = 'Weapons'},
@@ -68,5 +68,12 @@ join(res.keyCommands,{
 
 -- Countermeasures
 {combos = {{key = 'E', reformers = {'LShift'}}}, down = iCommandActiveIRJamming, name = 'IR Jamming', category = 'Countermeasures'},
+
+
+-- custom
+{down = iTestCommand, name = 'testCommand', category = 'Debug'},
+
+
+
 })
 return res

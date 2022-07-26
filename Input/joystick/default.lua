@@ -17,8 +17,8 @@ join(res.keyCommands,{
 {down = iCommandPlaneFuelOn, up = iCommandPlaneFuelOff, name = 'Fuel Dump', category = 'Systems'},
 {down = iCommandPlaneJettisonFuelTanks, name = 'Jettison Fuel Tanks', category = 'Systems'},
 {down = iCommandPowerOnOff, name = 'Electric Power Switch', category = 'Systems'},
-{pressed = iCommandAltimeterPressureIncrease,	up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Increase Su-25T', category = 'Systems'},
-{pressed = iCommandAltimeterPressureDecrease, up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Decrease Su-25T', category = 'Systems'},
+{pressed = iCommandAltimeterPressureIncrease,	up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Increase F-104G', category = 'Systems'},
+{pressed = iCommandAltimeterPressureDecrease, up = iCommandAltimeterPressureStop, name = 'Altimeter Pressure Decrease F-104G', category = 'Systems'},
 
 -- Modes
 {down = iCommandPlaneModeFI0, name = '(6) Longitudinal Missile Aiming Mode', category = 'Modes'},

@@ -26,7 +26,200 @@
  #==============================================================================
  -->
 
-<PropertyList  include="EFM/Systems/config.xml">
+<PropertyList>
+  <autopilot>
+    <settings>
+      <aileron-deadzone />
+      <heading-bug-deg />
+      <true-heading-deg />
+      <gps-driving-true-heading />
+      <target-altitude-ft />
+      <vertical-speed-fpm />
+      <target-speed-kt />
+      <elevator-deadzone />
+    </settings>
+  </autopilot>
+  <controls>
+    <flight>
+      <aileron />
+      <elevator />
+      <rudder />
+      <rudder-trim />
+      <flaps></flaps>
+      <slats></slats>
+      <elevator-trim></elevator-trim>
+    </flight>
+    <gear>
+      <nose-wheel-steering />
+    </gear>
+
+    <electrical>
+      <external-power-connected>0</external-power-connected>
+      <crash-alt1-switch>0</crash-alt1-switch>
+      <alternator-1-switch>0</alternator-1-switch>
+      <crash-bat-switch>0</crash-bat-switch>
+      <crash-alt2-switch>0</crash-alt2-switch>
+      <alternator-2-switch>0</alternator-2-switch>
+      <battery-switch>0</battery-switch>
+      <tru-1-switch>0</tru-1-switch>
+      <tru-2-switch>0</tru-2-switch>
+    </electrical>
+  </controls>
+  <fdm>
+    <jsbsim>
+      <acefm>
+        <debug>0</debug>
+        <metric_forces>0</metric_forces>
+        <metric_moments>0</metric_moments>
+      </acefm>
+
+      <autoflight>
+        <input>
+          <hdg-active>0</hdg-active>
+          <pitch-switch>0</pitch-switch>
+          <roll-switch>0</roll-switch>
+          <vs-active>0</vs-active>
+        </input>
+        <pitch>
+          <altitude-2-sec-ahead>0</altitude-2-sec-ahead>
+          <d-gain>0.000001</d-gain>
+          <i-gain>0.000010</i-gain>
+          <master-pid>0</master-pid>
+          <p-gain>3</p-gain>
+          <vs>
+            <pid>0</pid>
+          </vs>
+        </pitch>
+        <roll>
+          <d-gain>-0.0</d-gain>
+          <heading>
+            <i-gain>0.0</i-gain>
+            <p-gain>3.5</p-gain>
+            <pi>0</pi>
+          </heading>
+          <heading-error-deg>0</heading-error-deg>
+          <i-gain>-0.0</i-gain>
+          <master-pid>0</master-pid>
+          <p-gain>-1.0</p-gain>
+        </roll>
+      </autoflight>
+      <controls>
+        <canopy>
+          <open-dmd>0</open-dmd>
+        </canopy>
+        <fcs>
+          <rudder-gearing-master-switch-85c>0</rudder-gearing-master-switch-85c>
+        </fcs>
+        <hydraulics>
+          <bypass-1-switch>0</bypass-1-switch>
+          <bypass-2-switch>0</bypass-2-switch>
+          <electric-pump-switch>0</electric-pump-switch>
+        </hydraulics>
+      </controls>
+      <inertia>
+        <tank-centre-fitted>0</tank-centre-fitted>
+        <tank-wing-left-fitted>0</tank-wing-left-fitted>
+        <tank-wing-right-fitted>0</tank-wing-right-fitted>
+      </inertia>
+      <sas>
+        <pitch-autotrim-enabled>1</pitch-autotrim-enabled>
+        <pitch-autotrim-v1-c1>75.7125</pitch-autotrim-v1-c1>
+        <pitch-damping-1-c1>57.142</pitch-damping-1-c1>
+        <pitch-l>1</pitch-l>
+        <pitch-r>1</pitch-r>
+        <pitch-v0-c1>3</pitch-v0-c1>
+        <pitch-v0-c2>0</pitch-v0-c2>
+        <pitch-v0-c3>11</pitch-v0-c3>
+        <pitch-v0-c4>32.1</pitch-v0-c4>
+        <roll-l>1</roll-l>
+        <roll-p-v0-k>-0.2</roll-p-v0-k>
+        <roll-r>1</roll-r>
+        <yaw-l>1</yaw-l>
+        <yaw-r>1</yaw-r>
+        <yaw-r-c1>3</yaw-r-c1>
+        <yaw-r-c2>0</yaw-r-c2>
+        <yaw-r-c3>11</yaw-r-c3>
+        <yaw-r-c4>32.1</yaw-r-c4>
+      </sas>
+      <systems>
+        <canopy>
+          <serviceable>1</serviceable>
+          <hinges>
+            <serviceable>1</serviceable>
+          </hinges>
+          <has-power>1</has-power>
+        </canopy>
+        <ecs>
+          <anti-fog>0</anti-fog>
+          <!-- ECS bleed air source: 
+                    0 : Engines
+                    2 : Off
+                -->
+          <bleed-air-source>0</bleed-air-source>
+          <cabin-altitude-ft />
+          <canopy-position-dmd>0</canopy-position-dmd>
+          <emerg-vent>0</emerg-vent>
+          <liquid-oxygen-activated>0</liquid-oxygen-activated>
+          <oxygen-pressure-psi />
+          <!-- oxygen qty; 0 off, 1 normal, 2 emerg-->
+          <oxygen-qty-test>0</oxygen-qty-test>
+          <oxygen-quantity-liters />
+          <oxygen-supply-mode>0</oxygen-supply-mode>
+          <pressurisation-active>1</pressurisation-active>
+          <!--Windscreen Heating-->
+          <windscreen-factor1>6750</windscreen-factor1>
+          <windscreen-frost-amount-dmd-rate>0.1</windscreen-frost-amount-dmd-rate>
+          <windscreen-heater-power-watts />
+          <windscreen-heater-watts-second>46</windscreen-heater-watts-second>
+          <!--Watts per second ramp up on heater input consumption-->
+          <windscreen-temperature-k>290</windscreen-temperature-k>
+          <windshield-heat>0</windshield-heat>
+        </ecs>
+
+        <electrical>
+          <ac-transformer-offline>0</ac-transformer-offline>
+          <alternator-1-failed>0</alternator-1-failed>
+          <alternator-1-offline>0</alternator-1-offline>
+          <alternator-2-failed>0</alternator-2-failed>
+          <alternator-2-offline>0</alternator-2-offline>
+          <battery-failed>0</battery-failed>
+          <battery-offline>0</battery-offline>
+          <bus>
+            <ac-busbar-1>0</ac-busbar-1>
+            <ac-busbar-2>0</ac-busbar-2>
+            <dc-busbar-emerg>0</dc-busbar-emerg>
+          </bus>
+          <external-power-connected>0</external-power-connected>
+          <inverter-failed>0</inverter-failed>
+          <inverter-offline>0</inverter-offline>
+          <normal-ac-volts>115</normal-ac-volts>
+          <normal-dc-volts>28.5</normal-dc-volts>
+          <transformer-failed>0</transformer-failed>
+          <tru1-failed>0</tru1-failed>
+          <tru1-offline>0</tru1-offline>
+          <tru2-failed>0</tru2-failed>
+          <tru2-offline>0</tru2-offline>
+        </electrical>
+        <hydraulics>
+          <bypass-1-valve>0</bypass-1-valve>
+          <bypass-2-valve>0</bypass-2-valve>
+          <electric-pump-normal-pressure>145</electric-pump-normal-pressure>
+          <electric-pump-running>0</electric-pump-running>
+          <electric-pump-start-request>0</electric-pump-start-request>
+          <normal-pressure>206</normal-pressure>
+          <number1-system-pump-failed>0</number1-system-pump-failed>
+          <number2-elec-pump-failed>0</number2-elec-pump-failed>
+          <number2-system-pump-failed>0</number2-system-pump-failed>
+          <pressure-1-valve>0</pressure-1-valve>
+          <pressure-2-valve>0</pressure-2-valve>
+          <ptu-running>0</ptu-running>
+        </hydraulics>
+        <refuel>
+          <probe-pos-dmd>0</probe-pos-dmd>
+        </refuel>
+      </systems>
+    </jsbsim>
+  </fdm>
 
   <sim>
     <description>SEPECAT Jaguar GR1</description>
@@ -48,7 +241,7 @@
     <status>beta</status>
 
     <author>Emmanuel Baranger, Steve Brown, Gary Brown, Jonathan Redpath, StuartC, NC-687, Nikolai V. Chr., Joshua Davidson, Richard Harrison, Jüttner Domokos</author>
- 
+
     <current-view>
       <internal></internal>
     </current-view>
